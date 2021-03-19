@@ -7,7 +7,7 @@ const should = chai.should();
 chai.use(chaiHttp);
 
 //TODO AIP_URL
-const AIP_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3000";
 
 describe("Posts API", () => {
 	/**
@@ -15,7 +15,7 @@ describe("Posts API", () => {
 	 */
 	describe("/GET api/posts", () => {
 		it("It should GET all the posts", (done) => {
-			chai.request(AIP_URL)
+			chai.request(API_URL)
 				.get("/api/posts")
 				.end((err, res) => {
 					res.should.have.status(200);
@@ -26,7 +26,7 @@ describe("Posts API", () => {
 		});
 
 		it("It should not GET all the posts", (done) => {
-			chai.request(AIP_URL)
+			chai.request(API_URL)
 				.get("/api/post")
 				.end((err, res) => {
 					res.should.have.status(400);
