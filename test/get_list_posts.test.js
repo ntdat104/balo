@@ -8,25 +8,23 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('editpost API', () => {
-    describe('Method=POST /editpost', () => {
+describe('API get_list_posts', () => {
+    describe('Method=POST /get_list_posts', () => {
         it('Lấy bài viết thành công', (done) => {
-            const editPost = {
+            const post = {
                 token: 'sjjsnannsk',
-                id: 'anskndhsjjnsd',
-                described: 'sbsvs',
-                image: ['ảnh 1', 'ảnh 2', 'ảnh 3'],
-                image_del: ['ảnh x', 'ảnh y'],
-                image_sort: [2, 0, 1],
-                video: 'url video',
+                lastid: 'anskndhsjjnsd',
+                index: 2,
+                count: 10,
             };
             chai.request(API_URL)
-                .post('/editpost')
-                .send(editPost)
+                .post('/get_list_posts')
+                .send(post)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message');
+                    res.body.should.have.property('data');
                     done();
                 });
         });

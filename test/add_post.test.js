@@ -8,25 +8,32 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('logout API', () => {
-    describe('Method=POST /logout', () => {
-        it('Đăng xuất thành công!', (done) => {
-            const token = 'asjdanwdnaskd';
+describe('API add_post', () => {
+    describe('Method=POST /add_post', () => {
+        it('Đăng bài thành công!', (done) => {
+            const newPost = {
+                token: 'sjjsnannsk',
+                described: 'đăng trạng thái',
+            };
             chai.request(API_URL)
-                .post('/logout')
-                .send(token)
+                .post('/add_post')
+                .send(newPost)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message');
+                    res.body.should.have.property('data');
                     done();
                 });
         });
         it('Không thể kết nối Internet!', (done) => {
-            const token = 'asjdanwdnaskd';
+            const newPost = {
+                token: 'sjjsnannsk',
+                described: 'đăng trạng thái',
+            };
             chai.request(API_URL)
-                .post('/logout')
-                .send(token)
+                .post('/add_post')
+                .send(newPost)
                 .end((err, res) => {
                     res.should.have.status(1001);
                     res.body.should.be.a('object');

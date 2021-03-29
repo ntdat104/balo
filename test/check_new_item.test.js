@@ -8,16 +8,16 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('getpost API', () => {
-    describe('Method=POST /getpost', () => {
-        it('Lấy bài viết thành công', (done) => {
-            const post = {
-                token: 'sjjsnannsk',
-                id: 'anskndhsjjnsd',
+describe('API check_new_item', () => {
+    describe('Method=POST /check_new_item', () => {
+        it('Số phần tử mới chưa được hiển thị.', (done) => {
+            const newItem = {
+                last_id: 'anskndhsjjnsd',
+                category_id: 'snsjbbgss',
             };
             chai.request(API_URL)
-                .post('/getpost')
-                .send(post)
+                .post('/check_new_item')
+                .send(newItem)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');

@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('signup API', () => {
+describe('API signup', () => {
     describe('Method=POST /signup', () => {
         it('Đăng kí thành công!', (done) => {
             const newUser = {

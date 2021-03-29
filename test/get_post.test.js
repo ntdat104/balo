@@ -8,17 +8,15 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('getlistposts API', () => {
-    describe('Method=POST /getlistposts', () => {
+describe('API get_post', () => {
+    describe('Method=POST /get_post', () => {
         it('Lấy bài viết thành công', (done) => {
             const post = {
                 token: 'sjjsnannsk',
-                lastid: 'anskndhsjjnsd',
-                index: 2,
-                count: 10,
+                id: 'anskndhsjjnsd',
             };
             chai.request(API_URL)
-                .post('/getlistposts')
+                .post('/get_post')
                 .send(post)
                 .end((err, res) => {
                     res.should.have.status(1000);

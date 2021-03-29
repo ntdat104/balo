@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "mocha test/posts.test.js",
+		"test": "mocha posts.test.js",
 		"format": "npx prettier --config .prettierrc --write \"test/**/*.js\""
 	},
 	"keywords": [],
@@ -15,6 +15,5 @@
 		"chai-http": "^4.3.0",
 		"mocha": "^8.3.2",
 		"prettier": "^2.2.1"
-	},
-	"dependencies": {}
+	}
 }

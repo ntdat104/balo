@@ -8,21 +8,20 @@ chai.use(chaiHttp);
 
 const { API_URL } = require('../apiURL');
 
-describe('checknewitem API', () => {
-    describe('Method=POST /checknewitem', () => {
-        it('Số phần tử mới chưa được hiển thị.', (done) => {
-            const newItem = {
-                last_id: 'anskndhsjjnsd',
-                category_id: 'snsjbbgss',
+describe('API delete_post', () => {
+    describe('Method=POST /delete_post', () => {
+        it('Lấy bài viết thành công', (done) => {
+            const deletePost = {
+                token: 'sjjsnannsk',
+                id: 'anskndhsjjnsd',
             };
             chai.request(API_URL)
-                .post('/checknewitem')
-                .send(newItem)
+                .post('/delete_post')
+                .send(deletePost)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message');
-                    res.body.should.have.property('data');
                     done();
                 });
         });
