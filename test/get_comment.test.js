@@ -13,8 +13,8 @@ describe('API get_comment', () => {
         it('Lấy comment thành công', (done) => {
             const input = {
                 id: 12,
-                index: "snbsjj",
-                count: "asdnawd"
+                index: 'snbsjj',
+                count: 'asdnawd',
             };
             chai.request(API_URL)
                 .post('/get_comment')

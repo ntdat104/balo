@@ -12,9 +12,9 @@ describe('API get_list_conversation', () => {
     describe('Method=POST /get_list_conversation', () => {
         it('get_list_conversation thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                id: "jnnshnns",
-                count: "jnnshs",
+                token: 'snnsbskj',
+                id: 'jnnshnns',
+                count: 'jnnshs',
             };
             chai.request(API_URL)
                 .post('/get_list_conversation')

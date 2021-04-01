@@ -13,10 +13,10 @@ describe('API search', () => {
         it('Search thành công', (done) => {
             const input = {
                 token: 'sjjsnannsk',
-                keyword: "snshskas",
+                keyword: 'snshskas',
                 category_id: 10,
                 index: 11,
-                count: 2
+                count: 2,
             };
             chai.request(API_URL)
                 .post('/search')

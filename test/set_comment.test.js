@@ -12,11 +12,11 @@ describe('API set_comment', () => {
     describe('Method=POST /set_comment', () => {
         it('Set comment thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                id: "jnnshnns",
-                comment: "snnsjh",
-                index: "snaksnn",
-                count: "snnskha"
+                token: 'snnsbskj',
+                id: 'jnnshnns',
+                comment: 'snnsjh',
+                index: 'snaksnn',
+                count: 'snnskha',
             };
             chai.request(API_URL)
                 .post('/set_comment')

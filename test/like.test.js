@@ -12,8 +12,8 @@ describe('API like', () => {
     describe('Method=POST /like', () => {
         it('Like thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                id: "jnnshnns",
+                token: 'snnsbskj',
+                id: 'jnnshnns',
             };
             chai.request(API_URL)
                 .post('/like')

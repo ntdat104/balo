@@ -12,9 +12,9 @@ describe('API del_comment', () => {
     describe('Method=POST /del_comment', () => {
         it('Xóa comment thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                id: "jnnshnns",
-                id_com: "jnnshnns",
+                token: 'snnsbskj',
+                id: 'jnnshnns',
+                id_com: 'jnnshnns',
             };
             chai.request(API_URL)
                 .post('/del_comment')

@@ -14,7 +14,7 @@ describe('API set_accept_friend', () => {
             const input = {
                 user_id: 10,
                 token: 'sjjsnannsk',
-                is_accept: "snnsj"
+                is_accept: 'snnsj',
             };
             chai.request(API_URL)
                 .post('/set_accept_friend')

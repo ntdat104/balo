@@ -13,14 +13,14 @@ describe('API set_user_info', () => {
         it('set_user_info thành công', (done) => {
             const input = {
                 token: 'sjjsnannsk',
-                username: "snsnjkak",
-                description: "sxjnsh",
-                avatar: "sxjnsh",
-                address: "sxjnsh",
-                city: "sxjnsh",
-                country: "sxjnsh",
-                cover_image: "sxjnsh",
-                link: "sxjnsh",
+                username: 'snsnjkak',
+                description: 'sxjnsh',
+                avatar: 'sxjnsh',
+                address: 'sxjnsh',
+                city: 'sxjnsh',
+                country: 'sxjnsh',
+                cover_image: 'sxjnsh',
+                link: 'sxjnsh',
             };
             chai.request(API_URL)
                 .post('/set_user_info')

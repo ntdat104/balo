@@ -15,7 +15,7 @@ describe('API get_user_friends', () => {
                 user_id: 10,
                 token: 'sjjsnannsk',
                 index: 11,
-                count: 2
+                count: 2,
             };
             chai.request(API_URL)
                 .post('/get_user_friends')

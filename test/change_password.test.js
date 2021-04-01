@@ -12,9 +12,9 @@ describe('API change_password', () => {
     describe('Method=POST /change_password', () => {
         it('change_password thành công', (done) => {
             const input = {
-                password: "sjsnsba",
+                password: 'sjsnsba',
                 token: 'sjjsnannsk',
-                new_password: "snsnjkak",
+                new_password: 'snsnjkak',
             };
             chai.request(API_URL)
                 .post('/change_password')

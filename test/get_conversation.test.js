@@ -12,11 +12,11 @@ describe('API get_conversation', () => {
     describe('Method=POST /get_conversation', () => {
         it('get_conversation thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                partner_id: "jnnshnns",
-                conversation_id: "jnnshnss",
-                index: "jnnshnss",
-                count: "jnnshs",
+                token: 'snnsbskj',
+                partner_id: 'jnnshnns',
+                conversation_id: 'jnnshnss',
+                index: 'jnnshnss',
+                count: 'jnnshs',
             };
             chai.request(API_URL)
                 .post('/get_conversation')

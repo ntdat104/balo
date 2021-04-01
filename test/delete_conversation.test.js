@@ -12,9 +12,9 @@ describe('API delete_conversation', () => {
     describe('Method=POST /delete_conversation', () => {
         it('delete_conversation thành công', (done) => {
             const input = {
-                token: "snnsbskj",
-                conversation_id: "jnnshnss",
-                parner_id: "jnnshnss",
+                token: 'snnsbskj',
+                conversation_id: 'jnnshnss',
+                parner_id: 'jnnshnss',
             };
             chai.request(API_URL)
                 .post('/delete_conversation')

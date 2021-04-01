@@ -14,8 +14,8 @@ describe('API report', () => {
             const input = {
                 token: 'sjjsnannsk',
                 id: 12,
-                subject: "sanasd",
-                details: "asdnawdasd"
+                subject: 'sanasd',
+                details: 'asdnawdasd',
             };
             chai.request(API_URL)
                 .post('/report')
