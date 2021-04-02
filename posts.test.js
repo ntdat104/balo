@@ -18,18 +18,8 @@ describe('Posts API', () => {
             chai.request(API_URL)
                 .get('/posts')
                 .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('array');
-                    res.body.length.should.be.eq(4);
-                    done();
-                });
-        });
-
-        it('It should not GET all the posts', (done) => {
-            chai.request(API_URL)
-                .get('/post')
-                .end((err, res) => {
-                    res.should.have.status(404);
+                    res.should.have.status(200)
+                    console.log(res.body);
                     done();
                 });
         });

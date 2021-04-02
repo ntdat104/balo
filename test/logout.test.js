@@ -10,27 +10,45 @@ const { API_URL } = require('../apiURL');
 
 describe('API logout', () => {
     describe('Method=POST /logout', () => {
+        let token = null;
+        it('Lấy token thành công!', (done) => {
+            const input = {
+                phonenumber: '0987654321',
+                password: '123456',
+            };
+            chai.request(API_URL)
+                .post('/login')
+                .send(input)
+                .end((err, res) => {
+                    res.should.have.status(1000);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('message').eql('OK');
+                    token = res.body.token;
+                    done();
+                });
+        });
         it('Đăng xuất thành công!', (done) => {
-            const token = 'asjdanwdnaskd';
             chai.request(API_URL)
                 .post('/logout')
                 .send(token)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');
-                    res.body.should.have.property('message');
+                    res.body.should.have.property('message').eql('OK');
                     done();
                 });
         });
-        it('Không thể kết nối Internet!', (done) => {
-            const token = 'asjdanwdnaskd';
+        it('Token không hợp lệ!', (done) => {
+            const tokenFake = 'snsjanshskss';
             chai.request(API_URL)
                 .post('/logout')
-                .send(token)
+                .send(tokenFake)
                 .end((err, res) => {
-                    res.should.have.status(1001);
+                    res.should.have.status(9998);
                     res.body.should.be.a('object');
-                    res.body.should.have.property('message');
+                    res.body.should.have
+                        .property('message')
+                        .eql('Token is invalid');
                     done();
                 });
         });
