@@ -28,9 +28,12 @@ describe('API logout', () => {
                 });
         });
         it('Đăng xuất thành công!', (done) => {
+            const input = {
+                token,
+            };
             chai.request(API_URL)
                 .post('/logout')
-                .send(token)
+                .send(input)
                 .end((err, res) => {
                     res.should.have.status(1000);
                     res.body.should.be.a('object');
@@ -39,10 +42,26 @@ describe('API logout', () => {
                 });
         });
         it('Token không hợp lệ!', (done) => {
-            const tokenFake = 'snsjanshskss';
+            const input = {
+                token: 'snsjsbsgs',
+            };
             chai.request(API_URL)
                 .post('/logout')
-                .send(tokenFake)
+                .send(input)
+                .end((err, res) => {
+                    res.should.have.status(9998);
+                    res.body.should.be.a('object');
+                    res.body.should.have
+                        .property('message')
+                        .eql('Token is invalid');
+                    done();
+                });
+        });
+        it('Token không hợp lệ!', (done) => {
+            const input = {};
+            chai.request(API_URL)
+                .post('/logout')
+                .send(input)
                 .end((err, res) => {
                     res.should.have.status(9998);
                     res.body.should.be.a('object');
