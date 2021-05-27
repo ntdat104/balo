@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "mocha posts.test.js",
+		"test": "mocha",
 		"format": "prettier --config .prettierrc.json --write \"test/**/*.js\"",
         "lint": "eslint -c .eslintrc.json --ext .js,.json test --fix"
 	},
