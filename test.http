@@ -27,3 +27,11 @@ Content-Type: application/json
     "content": "Cập nhật nội dung mới"
 }
 
+### @name test
+GET https://60ae0d5e80a61f00173324bc.mockapi.io/products
+Content-Type: application/json
+
+{
+    "phonenumber": "0123456789",
+    "password": "123456"
+}
